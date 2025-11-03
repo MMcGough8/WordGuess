@@ -11,6 +11,8 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <jupiter.version>5.7.0</jupiter.version>
+        <jackson.version>2.12.3</jackson.version>
     </properties>
     <build>
         <plugins>
@@ -48,9 +50,7 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
-
-    <dependencies>
+    
         <!-- Junit5 Dependency -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
