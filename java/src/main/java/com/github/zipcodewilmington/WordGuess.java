@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @date 5/27/21 11:02 AM
  */
 public class WordGuess {
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean playAgain = true;
