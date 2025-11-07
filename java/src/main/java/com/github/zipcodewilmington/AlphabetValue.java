@@ -24,19 +24,6 @@ public class AlphabetValue {
     }
 
     /**
-     * Calculates the sum of all letter values in a word
-     * @param word the word to calculate the value for
-     * @return the sum of all letter values
-     */
-    public static int getWordValue(String word) {
-        int total = 0;
-        for (char c : word.toCharArray()) {
-            total += getLetterValue(c);
-        }
-        return total;
-    }
-
-    /**
      * Displays the alphabet with corresponding numerical values
      */
     public static void displayAlphabet() {
@@ -54,7 +41,7 @@ public class AlphabetValue {
 
         displayAlphabet();
 
-        System.out.println("\nEnter a letter or word to get its numerical value (or 'quit' to exit):");
+        System.out.println("\nEnter a letter to see its numerical value (or 'quit' to exit):");
 
         while (true) {
             System.out.print("\n> ");
@@ -73,27 +60,20 @@ public class AlphabetValue {
                 char letter = input.charAt(0);
                 int value = getLetterValue(letter);
                 if (value > 0) {
-                    System.out.println("Letter '" + letter + "' has a value of: " + value);
+                    System.out.println("Letter '" + letter + "' = " + value);
                 } else {
                     System.out.println("Invalid letter. Please enter a letter from a-z.");
                 }
             } else {
-                int wordValue = getWordValue(input);
-                System.out.println("Word '" + input + "' has a total value of: " + wordValue);
-
                 // Show individual letter values
-                System.out.print("Breakdown: ");
+                System.out.println("Letter values for '" + input + "':");
                 for (int i = 0; i < input.length(); i++) {
                     char c = input.charAt(i);
                     int value = getLetterValue(c);
                     if (value > 0) {
-                        System.out.print(c + "=" + value);
-                        if (i < input.length() - 1) {
-                            System.out.print(" + ");
-                        }
+                        System.out.println("  " + c + " = " + value);
                     }
                 }
-                System.out.println();
             }
         }
 
